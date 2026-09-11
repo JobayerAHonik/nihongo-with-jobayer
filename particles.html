@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JLPT N5 & N4 Japanese Particle Master Guide - Jobayer Al Hasan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', 'Noto Sans JP', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f1f5f9;
+            padding: 10px;
+            position: relative;
+        }
+
+        /* FULL PAGE WATERMARK OVERLAY */
+        .watermark-overlay {
+            position: fixed;
+            top: -10%;
+            left: -10%;
+            width: 120vw;
+            height: 120vh;
+            z-index: 9999;
+            pointer-events: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 50px 30px;
+            transform: rotate(-25deg);
+            opacity: 0.12;
+            overflow: hidden;
+        }
+
+        .watermark-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .watermark-item img {
+            width: 55px;
+            height: 55px;
+            filter: grayscale(100%);
+        }
+
+        .watermark-item span {
+            font-size: 11px;
+            font-weight: 700;
+            color: #000000;
+            margin-top: 4px;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        .print-btn-container {
+            text-align: right;
+            margin-bottom: 15px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+        }
+
+        .btn-print {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: 700;
+ &nbsp;           border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #1e3a8a;
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            color: #475569;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: #0f172a;
+            background-color: #e0f2fe;
+            border-left: 5px solid #0284c7;
+            padding: 8px 12px;
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE TABLE CONTAINER */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 12px 0;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            min-width: 550px;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 9px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #dbeafe;
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .jp {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .hl-particle {
+            background-color: #fef08a;
+            color: #92400e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .rule-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #2563eb;
+            padding: 10px 14px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .rule-title {
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 14.5px;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            margin-left: 18px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* DESKTOP MEDIA QUERIES */
+        @media (min-width: 768px) {
+            body { padding: 20px; }
+            .container { padding: 40px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 20px; padding: 10px 16px; }
+            p { font-size: 14.5px; }
+            .btn-print { padding: 12px 24px; font-size: 16px; }
+            .watermark-item img { width: 65px; height: 65px; }
+            .watermark-item span { font-size: 13px; }
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .container { box-shadow: none; max-width: 100%; padding: 0; }
+            .print-btn-container { display: none; }
+            h2 { background-color: #f1f5f9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { background-color: #e2e8f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .hl-particle { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .watermark-overlay {
+                display: grid !important;
+                opacity: 0.16 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="watermark-overlay">
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+    <div class="watermark-item"><img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR"><span>জোবায়ের আল হাসান</span></div>
+</div>
+
+<div class="container">
+    <div class="print-btn-container">
+        <button class="btn-print" onclick="window.print()">🖨️ Print / PDF</button>
+    </div>
+
+    <header>
+        <h1>JLPT N5 & N4 Japanese Particle Master Guide</h1>
+        <div class="subtitle">জাপানি ভাষার অত্যন্ত গুরুত্বপূর্ণ পার্টিকেলসমূহের পূর্ণাঙ্গ ব্যবহার ও নির্দেশিকা</div>
+    </header>
+
+    <h2>১. মৌলিক পার্টিকেলসমূহ (Basic Particles)</h2>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>পার্টিকেল</th>
+                    <th>প্রধান কাজ / ব্যবহার</th>
+                    <th>উদাহরণ (Example)</th>
+                    <th>বাংলা অর্থ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="hl-particle">は (wa)</span></td>
+                    <td>টপিক বা সাবজেক্ট নির্দেশ করতে</td>
+                    <td><span class="jp">わたし<span class="hl-particle">は</span> がくせいです。</span></td>
+                    <td>আমি একজন ছাত্র।</td>
+                </tr>
+                <tr>
+                    <td><span class="hl-particle">が (ga)</span></td>
+                    <td>নতুন তথ্য, সাবজেক্ট বা স্পেসিফিক ফোকাস</td>
+                    <td><span class="jp">1. あめ<span class="hl-particle">が</span> ふっています。<br>2. わたし<span class="hl-particle">が</span> いきます。</span></td>
+                    <td>1. বৃষ্টি পড়ছে।<br>2. আমি (নিজেই) যাচ্ছি।</td>
+                </tr>
+                <tr>
+                    <td><span class="hl-particle">を (o / wo)</span></td>
+                    <td>অবজেক্ট বা কর্ম নির্দেশ করতে (Transitive Verb)</td>
+                    <td><span class="jp">りんご<span class="hl-particle">を</span> たべます。</span></td>
+                    <td>আপেল খাই।</td>
+                </tr>
+                <tr>
+                    <td><span class="hl-particle">に (ni)</span></td>
+                    <td>স্থান, সময়, লক্ষ্য বা গন্তব্য</td>
+                    <td><span class="jp">とうきょう<span class="hl-particle">に</span> 行(い)きます。</span></td>
+                    <td>টোকিওতে যাই।</td>
+                </tr>
+                <tr>
+                    <td><span class="hl-particle">で (de)</span></td>
+                    <td>কাজের স্থান, মাধ্যম বা টুলস</td>
+                    <td><span class="jp">きょうしつ<span class="hl-particle">で</span> べんきょうします。</span></td>
+                    <td>শ্রেণিকক্ষে পড়াশোনা করি।</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>২. দিক, উৎস ও সংযোগকারী পার্টিকেল (N5 & N4)</h2>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>পার্টিকেল</th>
+                    <th>ব্যবহার</th>
+                    <th>উদাহরণ (Example)</th>
+                    <th>বাংলা অর্থ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="hl-particle">から (kara)</span></td>
+                    <td>হতে / থেকে (From / Since)</td>
+                    <td><span class="jp">きょうと<span class="hl-particle">から</span> きました。</span></td>
+                    <td>কিওটো থেকে এসেছি।</td>
+                </tr>
+                <tr>
+                    <td><span class="hl-particle">まで (made)</span></td>
+                    <td>পর্যন্ত (Until / To)</td>
+                    <td><span class="jp">5時(じ)<span class="hl-particle">まで</span> はたらきます。</span></td>
+                    <td>৫টা পর্যন্ত কাজ করি।</td>
+                </tr>
+                <tr>
+                    <td><span class="hl-particle">と (to)</span></td>
+                    <td>এবং (And) / কারো সাথে (With)</td>
+                    <td><span class="jp">ともだち<span class="hl-particle">と</span> えいがを みます。</span></td>
+                    <td>বন্ধুর সাথে সিনেমা দেখি।</td>
+                </tr>
+                <tr>
+                    <td><span class="hl-particle">も (mo)</span></td>
+                    <td>ও / ওরাও (Also / Too)</td>
+                    <td><span class="jp">わたし<span class="hl-particle">も</span> がくせいです。</span></td>
+                    <td> আমিও ছাত্র।</td>
+                </tr>
+                <tr>
+                    <td><span class="hl-particle">の (no)</span></td>
+                    <td>র / এর (Possession / Noun Modifier)</td>
+                    <td><span class="jp">わたし<span class="hl-particle">の</span> くるま。</span></td>
+                    <td>আমার গাড়ি।</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>৩. অ্যাডভান্সড পার্টিকেল (N4 Level Insights)</h2>
+    <div class="rule-box">
+        <div class="rule-title">🔹 に vs で (Ni vs De in Places)</div>
+        <p>• <span class="hl-particle">に (ni)</span> বসে অস্তিত্ব বা গন্তব্যের ক্ষেত্রে (যেমন: রুমের ভেতরে থাকা, কোথাও পৌঁছানো)।<br>
+        • <span class="hl-particle">で (de)</span> বসে কোনো সক্রিয় অ্যাকশন বা কাজ সম্পাদন করার স্থানে (যেমন: লাইব্রেরিতে পড়া, রেস্টুরেন্টে খাওয়া)।</p>
+    </div>
+
+    <div class="rule-box">
+        <div class="rule-title">🔹 は (Wa) vs が (Ga) এর মূল পার্থক্য</div>
+        <p>• <span class="hl-particle">は (wa)</span> হলো পুরো বাক্যের টপিক (Topic marker)—যা আগে থেকেই পরিচিত।<br>
+        • <span class="hl-particle">が (ga)</span> হলো নতুন বা প্রধান ফোকাস (Subject marker)—যা নতুন তথ্য বা জোর দিতে ব্যবহৃত হয়।</p>
+    </div>
+</div>
+
+</body>
+      </html>
+      
