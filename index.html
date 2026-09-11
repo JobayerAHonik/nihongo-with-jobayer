@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT N5 Complete Japanese Grammar & Conjugation Master Sheet</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', 'Noto Sans JP', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f1f5f9;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* FULL PAGE WATERMARK OVERLAY (Every Page Print Secured) */
+        .watermark-overlay {
+            position: fixed;
+            top: -10%;
+            left: -10%;
+            width: 120vw;
+            height: 120vh;
+            z-index: 9999;
+            pointer-events: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 50px 30px;
+            transform: rotate(-25deg);
+            opacity: 0.12; /* Reading legibility */
+            overflow: hidden;
+        }
+
+        .watermark-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .watermark-item img {
+            width: 65px;
+            height: 65px;
+            filter: grayscale(100%);
+        }
+
+        .watermark-item span {
+            font-size: 13px;
+            font-weight: 700;
+            color: #000000;
+            margin-top: 4px;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .print-btn-container {
+            text-align: right;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .btn-print {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        .btn-print:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 4px solid #2563eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #1e3a8a;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #475569;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: #0f172a;
+            background-color: #e0f2fe;
+            border-left: 6px solid #0284c7;
+            padding: 10px 16px;
+            font-size: 20px;
+            margin-top: 35px;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        h3 {
+            color: #1d4ed8;
+            font-size: 17px;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 14.5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #dbeafe;
+            color: #1e3a8a;
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .mnemonic-box {
+            background-color: #f0f9ff;
+            border: 2px dashed #0284c7;
+            padding: 18px;
+            margin: 18px 0;
+            border-radius: 8px;
+        }
+
+        .mnemonic-box h4 {
+            color: #0369a1;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .rhyme-badge {
+            background-color: #fef08a;
+            color: #854d0e;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-weight: bold;
+            border-radius: 12px;
+            display: block;
+            margin: 12px auto;
+            border: 1px solid #facc15;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .rule-box {
+            background-color: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 5px solid #2563eb;
+            padding: 14px 18px;
+            margin: 14px 0;
+            border-radius: 4px;
+        }
+
+        .rule-title {
+            font-weight: 700;
+            color: #1e3a8a;
+            font-size: 15.5px;
+            margin-bottom: 6px;
+        }
+
+        ul {
+            margin-left: 22px;
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .jp {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .hl {
+            background-color: #fef08a;
+            color: #92400e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .hl-blue {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .hl-green {
+            background-color: #dcfce7;
+            color: #166534;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .ex-list {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        .ex-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .ex-list li::before {
+            content: "👉";
+            position: absolute;
+            left: -5px;
+            top: 7px;
+        }
+
+        .test-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+        }
+
+        .test-q {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .options {
+            margin-left: 15px;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .container { box-shadow: none; max-width: 100%; padding: 0; }
+            .print-btn-container { display: none; }
+            h2 { background-color: #f1f5f9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            th { background-color: #e2e8f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .mnemonic-box, .rule-box, .rhyme-badge, .hl, .hl-blue, .hl-green { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .ex-list li { break-inside: avoid; }
+            
+            /* Print settings for watermark */
+            .watermark-overlay {
+                display: grid !important;
+                opacity: 0.16 !important; /* Visible on photocopy */
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- WATERMARK GRID (Appears on every page during Print/PDF) -->
+<div class="watermark-overlay">
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+    <div class="watermark-item">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=%E0%A6%9C%E0%A7%8B%E0%A6%AC%E0%A6%BE%E0%A6%AF%E0%A6%BC%E0%A7%87%E0%A6%B0%20%E0%A6%86%E0%A6%B2%20%E0%A6%B9%E0%A6%BE%E0%A6%B8%E0%A6%AE" alt="QR Code">
+        <span>জোবায়ের আল হাসান</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="print-btn-container">
+        <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <header>
+        <h1>JLPT N5 পূর্ণাঙ্গ জাপানি গ্রামার ও কনজুগেশন গাইড</h1>
+        <div class="subtitle">মিন্না নো নিহোঙ্গো (লেসন ১ - ২৫): Verb Forms, Grammar Rules, Adjectives & Transitivity</div>
+    </header>
+
+    <!-- SECTION 1: VERB GROUPS & MNEMONIC -->
+    <h2>১. ভার্ব গ্রুপ এবং গ্রুপ ২ এর বিশেষ ব্যতিক্রম ছন্দ</h2>
+    <p>জাপানি ভার্ব ৩টি গ্রুপে বিভক্ত। ます (Masu) ফর্ম থেকে সহজে চেনার উপায়:</p>
+    <ul>
+        <li><strong>Group 1:</strong> ます এর ঠিক আগের অক্ষরটি <strong>い (i-line)</strong> সাউন্ডের হয় (যেমন: かきます, のみます, <span class="hl-blue">おもいだします</span>)।</li>
+        <li><strong>Group 2:</strong> ます এর ঠিক আগের অক্ষরটি <strong>え (e-line)</strong> সাউন্ডের হয় (যেমন: たべます, ねます)।</li>
+        <li><strong>Group 3:</strong> শুধুমাত্র ২টি ভার্ব: <span class="jp">します</span> (করা) এবং <span class="jp">きます</span> (আসা)।</li>
+    </ul>
+
+    <div class="mnemonic-box">
+        <h4>🔥 গ্রুপ ২ এর বিশেষ ব্যতিক্রম ছন্দ (Exception Mnemonic):</h4>
+        <p>নিচের ভার্বগুলোর শেষ সাউন্ড 'ই' (i-line) হওয়া সত্ত্বেও এগুলো <span class="hl-blue">Group 2</span> এর ব্যতিক্রমী ভার্ব:</p>
+        
+        <div class="rhyme-badge">
+            <strong>কারি, তারি, অরি<br>
+            আবি, অকি, দেকি<br>
+            মিমাস, কিমাস, ইমাস</strong>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ছন্দের শব্দ</th>
+                    <th>জাপানি ভার্ব</th>
+                    <th>Romaji</th>
+                    <th>বাংলা অর্থ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>১. কারি</strong></td>
+                    <td><span class="jp">かります</span></td>
+                    <td>Karimasu</td>
+                    <td>ধার করা (Borrow)</td>
+                </tr>
+                <tr>
+                    <td><strong>২. তারি</strong></td>
+                    <td><span class="jp">たります</span></td>
+                    <td>Tarimasu</td>
+                    <td>পর্যাপ্ত হওয়া (Be sufficient)</td>
+                </tr>
+                <tr>
+                    <td><strong>৩. অরি</strong></td>
+                    <td><span class="jp">おります</span></td>
+                    <td>Orimasu</td>
+                    <td>যানবাহন থেকে নামা (Get off)</td>
+                </tr>
+                <tr>
+                    <td><strong>৪. আবি</strong></td>
+                    <td><span class="jp">あびます</span></td>
+                    <td>Abimasu</td>
+                    <td>গোসল করা (Take a shower)</td>
+                </tr>
+                <tr>
+                    <td><strong>৫. অকি</strong></td>
+                    <td><span class="jp">おきます</span></td>
+                    <td>Okimasu</td>
+                    <td>ঘুম থেকে ওঠা (Wake up)</td>
+                </tr>
+                <tr>
+                    <td><strong>６. দেকি</strong></td>
+                    <td><span class="jp">できます</span></td>
+                    <td>Dekimasu</td>
+                    <td>পারা / সামর্থ্য থাকা (Can do)</td>
+                </tr>
+                <tr>
+                    <td><strong>৭. মিমাস</strong></td>
+                    <td><span class="jp">みます</span></td>
+                    <td>Mimasu</td>
+                    <td>দেখা (See/Watch)</td>
+                </tr>
+                <tr>
+                    <td><strong>৮. কিমাস</strong></td>
+                    <td><span class="jp">きます</span></td>
+                    <td>Kimasu</td>
+                    <td>পোশাক পরা (Wear)</td>
+                </tr>
+                <tr>
+                    <td><strong>৯. ইমাস</strong></td>
+                    <td><span class="jp">います</span></td>
+                    <td>Imasu</td>
+                    <td>থাকা [জীবন্ত বস্তু] (Exist)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECTION 2: TRANSITIVE VS INTRANSITIVE -->
+    <h2>২. ট্রান্সজিティブ ও ইনট্রানজিティブ ভার্ব (সকর্মক ও অকর্মক ক্রিয়া)</h2>
+    <p><strong>Transitive (他動詞 - সকর্মক):</strong> কর্তা নিজে কোনো কাজ সরাসরি সম্পাদন করে। পার্টিকেল বসে <span class="hl">を (o)</span>।<br>
+    <strong>Intransitive (自動詞 - অকর্মক):</strong> কাজ বা পরিবর্তনটি স্বয়ংক্রিয়ভাবে বা প্রাকৃতিকভাবে ঘটে। পার্টিকেল বসে <span class="hl-green">が (ga)</span>।</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Transitive Verb (を)</th>
+                <th>অর্থ ও ব্যবহার</th>
+                <th>Intransitive Verb (が)</th>
+                <th>অর্থ ও ব্যবহার</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="jp">ドア<span class="hl">を</span> あけます</span></td>
+                <td>আমি দরজা খুলি (Action by person)</td>
+                <td><span class="jp">ドア<span class="hl-green">が</span> あきます</span></td>
+                <td>দরজা খোলে (Opens automatically)</td>
+            </tr>
+            <tr>
+                <td><span class="jp">ドア<span class="hl">を</span> しめます</span></td>
+                <td>আমি দরজা বন্ধ করি</td>
+                <td><span class="jp">ドア<span class="hl-green">が</span> しまります</span></td>
+                <td>দরজা বন্ধ হয়</td>
+            </tr>
+            <tr>
+                <td><span class="jp">でんき<span class="hl">を</span> つけます</span></td>
+                <td>আমি লাইটের সুইচ জ্বালানো করি</td>
+                <td><span class="jp">でんき<span class="hl-green">が</span> つきます</span></td>
+                <td>লাইট জ্বলে ওঠে</td>
+            </tr>
+            <tr>
+                <td><span class="jp">でんき<span class="hl">を</span> けします</span></td>
+                <td>আমি লাইট নিভিয়ে দেই</td>
+                <td><span class="jp">でんき<span class="hl-green">が</span> きえます</span></td>
+                <td>লাইট নিভে যায়</td>
+            </tr>
+            <tr>
+                <td><span class="jp">ものを ふくろに いれます</span></td>
+                <td>আমি ব্যাগে জিনিস ঢুকাই</td>
+                <td><span class="jp">ものが ふくろに はいります</span></td>
+                <td>জিনিস ব্যাগে ঢোকে</td>
+            </tr>
+            <tr>
+                <td><span class="jp">ものを ふくろから だします</span></td>
+                <td>আমি ব্যাগ থেকে জিনিস বের করি</td>
+                <td><span class="jp">ものが ふくろから でます</span></td>
+                <td>জিনিস বের হয়ে আসে</td>
+            </tr>
+            <tr>
+                <td><span class="jp">くるま<span class="hl">を</span> とめます</span></td>
+                <td>আমি গাড়ি থামাই</td>
+                <td><span class="jp">くるま<span class="hl-green">が</span> とまります</span></td>
+                <td>গাড়ি থামে</td>
+            </tr>
+            <tr>
+                <td><span class="jp">さいふ<span class="hl">を</span> おとします</span></td>
+                <td>আমি মানিব্যাগ ফেলে দিয়েছি (Drop)</td>
+                <td><span class="jp">さいふ<span class="hl-green">が</span> おちます</span></td>
+                <td>মানিব্যাগ পড়ে গেছে (Fall)</td>
+            </tr>
+            <tr>
+                <td><span class="jp">こども<span class="hl">を</span> おこします</span></td>
+                <td>আমি বাচ্চাকে ঘুম থেকে তুলি</td>
+                <td><span class="jp">こども<span class="hl-green">が</span> おきます</span></td>
+                <td>বাচ্চা ঘুম থেকে ওঠে</td>
+            </tr>
+            <tr>
+                <td><span class="jp">まど<span class="hl">を</span> こわします</span></td>
+                <td>আমি জানালা ভাঙি</td>
+                <td><span class="jp">まど<span class="hl-green">が</span> こわれます</span></td>
+                <td>জানালা ভেঙে যায়</td>
+            </tr>
+            <tr>
+                <td><span class="jp">ふく<span class="hl">を</span> よごします</span></td>
+                <td>আমি কাপড় নোংরা করি</td>
+                <td><span class="jp">ふく<span class="hl-green">が</span> よごれます</span></td>
+                <td>কাপড় নোংরা হয়</td>
+            </tr>
+            <tr>
+                <td><span class="jp">おゆ<span class="hl">を</span> わかします</span></td>
+          
